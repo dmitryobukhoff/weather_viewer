@@ -23,6 +23,9 @@
     <jdbc.postgresql.version>42.6.0</jdbc.postgresql.version>
     <servlet.version>4.0.1</servlet.version>
     <thyeleaf.version>3.0.15.RELEASE</thyeleaf.version>
+    <spring-data-jpa.versino>3.1.0</spring-data-jpa.versino>
+    <hibernate_validator.version>8.0.0.Final</hibernate_validator.version>
+    <junit.jupiter.versinon>5.8.2</junit.jupiter.versinon>
   </properties>
 
   <dependencies>
@@ -68,6 +71,20 @@
       <groupId>org.thymeleaf</groupId>
       <artifactId>thymeleaf</artifactId>
       <version>${thyeleaf.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-jpa</artifactId>
+      <version>${spring-data-jpa.versino}</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.jupiter.versinon}</version>
+      <scope>test</scope>
     </dependency>
 
 
