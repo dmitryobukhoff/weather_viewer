@@ -29,11 +29,17 @@
                 <form th:action="@{/registration}" th:method="POST">
                     <div class="mb-3">
                         <label for="login" class="form-label">Логин</label>
-                        <input type="text" class="form-control" id="login" name="login" required>
+                        <input type="text" class="form-control" id="login" name="login" th:value="${login}" required>
+                        <div th:if="${login_error != null}">
+                            <p th:text="${login_error}" style="color: red"></p>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Пароль</label>
                         <input type="password" class="form-control" id="password" name="password" required>
+                        <div th:if="${password_error != null}">
+                            <p th:text="${password_error}" style="color: red"></p>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="confirmPassword" class="form-label">Подтверждение пароля</label>

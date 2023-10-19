@@ -18,10 +18,16 @@
             <div class="mb-3">
               <label for="login" class="form-label">Логин:</label>
               <input type="text" class="form-control" id="login" name="login" required>
+              <div th:if="${wrong_login != null}">
+                <p th:text="${wrong_login}" style="color: red"></p>
+              </div>
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Пароль:</label>
               <input type="password" class="form-control" id="password" name="password" required>
+              <div th:if="${wrong_password != null}">
+                <p th:text="${wrong_password}" style="color: red"></p>
+              </div>
             </div>
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="remember" name="remember">

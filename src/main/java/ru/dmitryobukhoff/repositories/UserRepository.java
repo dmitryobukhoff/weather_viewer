@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class UserRepository implements CrudRepository<User> {
-    private final EntityManagerFactory entityManagerFactory = EntityManagerUtil.getInstance();
+    private EntityManagerFactory entityManagerFactory = EntityManagerUtil.getInstance();
 
     @Override
     public void create(User user) {

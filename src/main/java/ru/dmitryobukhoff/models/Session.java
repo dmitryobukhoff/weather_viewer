@@ -1,11 +1,17 @@
 package ru.dmitryobukhoff.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "sessions")
+@NoArgsConstructor
+@Getter
+@Setter
 public class Session {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +23,11 @@ public class Session {
     private User user;
 
     @Column(name = "expires_time", nullable = false)
-    private Date expiresAt;
+    private LocalDateTime expiresAt;
+
+    public Session(User user, LocalDateTime expiresAt){
+        this.user = user;
+        this.expiresAt = expiresAt;
+    }
 
 }

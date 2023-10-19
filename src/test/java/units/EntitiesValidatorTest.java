@@ -1,3 +1,5 @@
+package units;
+
 import org.junit.Test;
 import ru.dmitryobukhoff.validators.EntitiesValidator;
 

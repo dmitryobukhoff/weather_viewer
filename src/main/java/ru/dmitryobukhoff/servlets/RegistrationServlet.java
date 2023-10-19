@@ -26,6 +26,7 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         WebContext webContext = new WebContext(request, response,getServletContext());
         templateEngine.process("registration", webContext, response.getWriter());
     }

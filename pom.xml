@@ -26,6 +26,7 @@
     <spring-data-jpa.versino>3.1.0</spring-data-jpa.versino>
     <hibernate_validator.version>8.0.0.Final</hibernate_validator.version>
     <junit.jupiter.versinon>5.8.2</junit.jupiter.versinon>
+    <h2.test.version>2.2.224</h2.test.version>
   </properties>
 
   <dependencies>
@@ -86,6 +87,14 @@
       <version>${junit.jupiter.versinon}</version>
       <scope>test</scope>
     </dependency>
+
+
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>${h2.test.version}</version>
+    </dependency>
+
 
 
   </dependencies>
