@@ -1,0 +1,129 @@
+body{
+    margin: 0px;
+    font-family: "Open Sans", serif;
+}
+
+.background_screen{
+    background-image: url("/img/weather_bg.png");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    margin: 0px 166px;
+}
+
+
+.form_holder{
+    padding-top: 60px;
+}
+.form{
+    display: flex;
+    justify-content: center;
+}
+
+.input_field{
+    width: 1048px;
+    height: 81px;
+    border-radius: 10px;
+    border-width: 0px;
+    background-color: #D9D9D9;
+    padding-left: 30px;
+    font-family: "Open Sans", serif;
+    font-size: 40px;
+    font-weight: 300;
+
+    outline: none;
+
+    transition: all 1.0s;
+}
+
+.input_field:focus{
+    transform: scale(1.05);
+}
+
+.list_holder{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.list_item{
+    border-radius: 10px;
+    background-color: rgba(96, 137, 242, 1.0);
+    width: 330px;
+    height: 460px;
+    padding: 15px 20px;
+    color: #FFF;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.item_name_holder{
+}
+
+.item_name{
+    text-align: left;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.item_temperature{
+    font-weight: 300;
+    font-size: 40px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.item_windspeed, .item_sunset, .item_sunrise, .item_description{
+    font-size: 24px;
+    margin-top: 10px;
+    font-weight: 300;
+}
+.item_description_text{
+    font-size: 18px;
+    font-weight: 300;
+    padding-left: 5px;
+}
+
+.button_holder{
+    display: flex;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.button_add {
+    background-color: rgba(217, 217, 217, 1);
+    color: #FFF;
+    width: 324px;
+    height: 54px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 20px;
+    border-width: 0;
+    transition: background-color 0.3s linear;
+}
+
+.button_add span{
+    color: rgba(96, 137, 242, 1);
+}
+
+.button_add:hover{
+    background-color: rgba(152, 183, 211, 1);
+}
+
+.wrong_text_holder{
+    display: flex;
+    justify-content: left;
+}
+
+.wrong_text{
+    color: #FFF;
+    font-weight: 300;
+    font-size: 40px;
+}
+

@@ -27,6 +27,9 @@
     <hibernate_validator.version>8.0.0.Final</hibernate_validator.version>
     <junit.jupiter.versinon>5.8.2</junit.jupiter.versinon>
     <h2.test.version>2.2.224</h2.test.version>
+    <jackson.version>2.14.2</jackson.version>
+    <bcrypt.version>0.9.0</bcrypt.version>
+    <slf4j.version>2.0.7</slf4j.version>
   </properties>
 
   <dependencies>
@@ -95,6 +98,28 @@
       <version>${h2.test.version}</version>
     </dependency>
 
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>at.favre.lib</groupId>
+      <artifactId>bcrypt</artifactId>
+      <version>${bcrypt.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
 
 
   </dependencies>

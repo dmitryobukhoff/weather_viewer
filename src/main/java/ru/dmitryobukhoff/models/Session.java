@@ -18,7 +18,7 @@ public class Session {
     @Column(name = "id")
     private int id;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 

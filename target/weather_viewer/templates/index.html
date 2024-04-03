@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Weather App</title>
+</head>
+<body>
+<div class="background_screen">
+    <div class="container">
+        <div class="nav_panel">
+            <div class="login_button" th:unless="${authenticated}">
+                <a class="nav_item" th:href="@{/authenticate}" alt="">Log in</a>
+            </div>
+            <div class="signin_button" th:unless="${authenticated}">
+                <a class="nav_item" th:href="@{/registration}" alt="">Sign in</a>
+            </div>
+
+            <div class="name_description_holder" th:if="${authenticated}">
+                <div class="name_description">
+                    Hi, <span th:text="${user.login}"></span>
+                </div>
+            </div>
+            <div class="logout_button" th:if="${authenticated}">
+                <a class="nav_item" th:href="@{/logout}" alt="">Log out</a>
+            </div>
+        </div>
+
+        <div class="search_block">
+            <div class="search_title_holder">
+                <div class="search_title">
+                    Weather App
+                </div>
+            </div>
+
+            <div class="search_input">
+                <div class="form_container">
+                    <form class="search_form" th:action="@{/find}" th:method="GET">
+                        <input class="input_field" type="text" name="city" placeholder="Search...">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="service_slogan">
+            <div class="slogan_holder">
+                <div class="slogan_text">
+                    The best weather searching service ever!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

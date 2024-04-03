@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="eu"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/find_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Find</title>
+</head>
+<body>
+<div class="background_screen">
+    <div class="container">
+        <div class="form_holder">
+            <form class="form" th:action="@{/find}" th:method="GET">
+                <input type="text" name="city" placeholder="City..." class="input_field" required>
+            </form>
+        </div>
+        <div>
+
+        <div th:if="${error == null}">
+            <div class="list_holder">
+                <div class="list_item_holder">
+                    <div class="list_item">
+                        <div class="item_name_holder">
+                            <div class="item_name" th:text="${forecast.name}">
+
+                            </div>
+                        </div>
+                        <div class="item_temperature_holder">
+                            <div class="item_temperature" th:text="${forecast.getMain().getTemperature() + ' ℃'}">
+
+                            </div>
+                        </div>
+                        <div class="item_windspeed_holder">
+                            <div class="item_windspeed" th:text="${'Wind speed :' + forecast.getWind().getSpeed() + 'm/s'}">
+
+                            </div>
+                        </div>
+                        <div class="item_sunset_holder">
+                            <div class="item_sunset" th:text="${'Sunset: ' + forecast.getSystem().getSunsetTime()}">
+
+                            </div>
+                        </div>
+                        <div class="item_sunrise_holder">
+                            <div class="item_sunrise" th:text="${'Sunrise: ' + forecast.getSystem().getSunriseTime()}">
+
+                            </div>
+                        </div>
+                        <div class="item_description_holder">
+                            <div class="item_description">
+                                Description:
+                            </div>
+                            <div class="item_description_text" th:text="${forecast.getWeather()[0].getDescription()}">
+
+                            </div>
+                        </div>
+                        <div th:if="${authenticated && !added}" class="button_holder">
+                            <form th:action="@{/find(longitude=${forecast.getCoordinates().longitude}, latitude=${forecast.getCoordinates().latitude})}" th:method="POST">
+                                <button type="submit" class="button_add"><span>Add</span></button>
+                            </form>
+                        </div>
+                        <div th:if="${authenticated && added}" class="button_holder">
+                            <div class="button_add"><span>Added</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:unless="${error == null}">
+            <div class="wrong_text_holder">
+                <div class="wrong_text" th:text="${error}"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

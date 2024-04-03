@@ -8,6 +8,8 @@ import ru.dmitryobukhoff.models.User;
 import ru.dmitryobukhoff.repositories.UserRepository;
 import ru.dmitryobukhoff.services.AuthenticationService;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AuthenticationTest {
@@ -18,7 +20,7 @@ public class AuthenticationTest {
     @DisplayName("Проверка на существование пользователя в базе данных")
     public void notFoundUser(){
         assertThrows(NotUniqueLoginException.class, () -> {
-            User user = authenticationService.findUserByLogin("admin");
+            Optional<User> user = authenticationService.findUserByLogin("admin");
         });
     }
 

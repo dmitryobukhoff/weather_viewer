@@ -1,5 +1,6 @@
 package ru.dmitryobukhoff.utils;
 
+import lombok.extern.slf4j.Slf4j;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
@@ -7,7 +8,9 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import java.time.LocalDateTime;
 
+@Slf4j
 @WebListener(value = "/*")
 public class ThymeleafEngineUtil implements ServletContextListener {
 
@@ -17,14 +20,12 @@ public class ThymeleafEngineUtil implements ServletContextListener {
 
         ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver(servletContextEvent.getServletContext());
         templateResolver.setCharacterEncoding("UTF-8");
-        templateResolver.setPrefix("/WEB-INF/templates/");
+        templateResolver.setPrefix("/templates/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
-
         templateEngine.setTemplateResolver(templateResolver);
-
         servletContextEvent.getServletContext().setAttribute("templateEngine", templateEngine);
 
-        System.out.println("Создался TemplateEngine!");
+        log.info(LocalDateTime.now() + "Template Engine is created");
     }
 }

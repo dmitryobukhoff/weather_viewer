@@ -3,9 +3,8 @@ package ru.dmitryobukhoff.repositories;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import ru.dmitryobukhoff.models.Session;
+import ru.dmitryobukhoff.models.User;
 import ru.dmitryobukhoff.utils.EntityManagerUtil;
-
-import java.util.Optional;
 
 public class SessionRepository implements CrudRepository<Session> {
 
@@ -50,7 +49,7 @@ public class SessionRepository implements CrudRepository<Session> {
         entityManager.close();
     }
 
-    public int createSessionWithId(Session session){
+    public int createSessionWithId(Session session) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
         entityManager.persist(session);

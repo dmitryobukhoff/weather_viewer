@@ -17,19 +17,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-
     @Column(name = "login", unique = true)
     private String login;
-
     @Column(name = "password")
     private String password;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user")
     private List<Location> locations;
-
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private Session session;
-
     public User(String login, String password) {
         this.login = login;
         this.password = password;

@@ -1,0 +1,113 @@
+body{
+	margin: 0px;
+	font-family: "Open Sans", serif;
+}
+
+.background_screen{
+	background-image: url("/img/weather_bg.png");
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.container{
+	margin: 0px 166px;
+}
+
+.nav_panel{
+	display: flex;
+	padding: 50px;
+	margin-bottom: 120px;
+}
+
+.login_button{
+	margin-left: 1250px;
+}
+
+.signin_button{
+	margin-left: 30px;
+}
+
+.nav_item{
+	font-weight: 300;
+	text-decoration: none;
+	color: #FFF;
+	font-size: 32px;
+
+	transition: color 0.3s linear;
+}
+
+.nav_item:hover{
+	color: #747474;
+}
+
+
+.search_title_holder{
+	text-align: center;
+}
+
+.search_title{
+	color: #FFF;
+	font-weight: 600;
+	font-size: 64px;
+	text-shadow: 5px 5px 9px rgba(0, 0, 0, 0.9);
+}
+
+.search_input{
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+.search_form{
+	display: flex;
+	justify-content: center;
+}
+
+.input_field{
+	width: 1048px;
+	height: 81px;
+	border-radius: 10px;
+	border-width: 0px;
+	background-color: #D9D9D9;
+	padding-left: 30px;
+	font-family: "Open Sans", serif;
+	font-size: 40px;
+	font-weight: 300;
+
+	outline: none;
+
+	transition: all 1.0s;
+}
+
+.input_field:focus{
+	transform: scale(1.05);
+}
+
+.slogan_holder{
+	text-align: center;
+}
+
+.slogan_text{
+	color: #FFF;
+	font-weight: 300;
+	font-size: 32px;
+}
+
+.name_description_holder{
+	margin-left: 1000px;
+}
+
+.name_description{
+	font-family: "Open Sans";
+	font-weight: 300;
+	font-size: 32px;
+	color: #FFF;
+}
+
+.name_description span{
+	font-weight: 800;
+}
+
+.logout_button{
+	margin-left: 30px;
+}

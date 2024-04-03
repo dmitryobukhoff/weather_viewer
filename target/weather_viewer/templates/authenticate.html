@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="eu"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/log_style.css">
+  <title>Authorization</title>
+</head>
+<body>
+<div class="background_screen">
+  <div class="background-holder">
+    <div class="container">
+      <div class="reg_holder">
+        <div class="reg_title_holder">
+          <div class="reg_title">
+            Authorization
+          </div>
+        </div>
+
+        <div class="reg_form_holder">
+          <form class="reg_form" th:action="@{/authenticate}" th:method="POST">
+            <div class="login_holder">
+              <div class="login_title">
+                Login
+              </div>
+            </div>
+            <div class="login_input_holder">
+              <input type="text" id="login" name="login" class="login_input"
+                     placeholder="Login..." required>
+            </div>
+            <div class="login_holder">
+              <div class="login_title">
+                Password
+              </div>
+            </div>
+            <div class="login_input_holder">
+              <input type="password" id="password" name="password" class="login_input"
+                     placeholder="Password..." required>
+            </div>
+
+            <div class="checkbox_remember_holder">
+              <input type="checkbox" id="remember" name="remember"
+                     class="checkbox_remember">
+              <div class="checkbox_title">
+                Remember me?
+              </div>
+            </div>
+
+            <div th:if="${error != null}" class="error_container">
+              <div class="error_text_holder">
+                <div class="error_text" th:text="${error}">
+                </div>
+              </div>
+            </div>
+
+            <div class="submit_button_holder">
+              <div class="submit_button_bg">
+                <button type="submit" class="submit_button">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="reg_info">
+          <div class="reg_info_text_placeholder">
+            <div class="question_text">
+              Do you haven't got an account?
+            </div>
+            <div class="login_button_holder">
+              <a class="login_button" th:href="@{/registration}">Sign in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

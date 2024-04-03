@@ -22,12 +22,18 @@ public class Location {
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @Column(name = "latitude")
-    private BigDecimal latitude;
+    private Double latitude;
 
     @Column(name = "longitude")
-    private BigDecimal longitude;
+    private Double longitude;
+
+    public Location(User user, Double latitude, Double longitude){
+        this.user = user;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
 }
