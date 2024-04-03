@@ -3,13 +3,10 @@ package ru.dmitryobukhoff.servlets;
 import ru.dmitryobukhoff.exceptions.SessionNotExistExceptions;
 import ru.dmitryobukhoff.exceptions.WeatherAPIException;
 import ru.dmitryobukhoff.models.Location;
-import ru.dmitryobukhoff.models.Session;
 import ru.dmitryobukhoff.models.User;
 import ru.dmitryobukhoff.models.dtos.ForecastDto;
-import ru.dmitryobukhoff.repositories.SessionRepository;
 import ru.dmitryobukhoff.services.ForecastService;
 import ru.dmitryobukhoff.services.WeatherAPIService;
-
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
